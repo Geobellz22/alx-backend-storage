@@ -13,4 +13,4 @@ BEGIN
     WHERE name = New.item_name;
 END $$
 
-DELIMTER $$
+DELIMTER ; $$
