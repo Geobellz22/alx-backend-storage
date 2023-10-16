@@ -2,7 +2,7 @@
 -- decrease the quantity of an item
 -- after adding a new order
 
-DELIMITER $$
+DELIMITER $$ ;
 
 CREATE TRIGGER decrease_qunatity
 AFTER INSERT ON orders
