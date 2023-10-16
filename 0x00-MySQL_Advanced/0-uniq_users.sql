@@ -1,9 +1,9 @@
---creates a table users
---with id, email and name
---Drop the tables if it exists
+-- creates a table users
+-- with id, email and name
+-- Drop the tables if it exists
 
 CREATE TABLE IF NOT EXISTS users (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    email CHAR(255) NOT NULL UNIQUE,
-    name CHAR(255),
+    email VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255)
 );
