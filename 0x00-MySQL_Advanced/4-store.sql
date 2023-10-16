@@ -11,6 +11,6 @@ BEGIN
     UPDATE items
     SET quantity - NEW.number
     WHERE name = New.item_name;
-END;
-$$
-DELIMTER ;
+END $$
+
+DELIMITER ; $$
