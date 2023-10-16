@@ -4,12 +4,12 @@
 
 DELIMITER $$ ;
 
-CREATE TRIGGER decrease_qunatity
+CREATE TRIGGER decrease_quantity
 AFTER INSERT ON orders
 FOR EACH ROW
 BEGIN
     UPDATE items
-    SET quantity - NEW.number
+    SET quantity = quantity - NEW.number
     WHERE name = New.item_name;
 END $$
 
