@@ -1,8 +1,7 @@
--- Create a stored procedure ComputeAverageScoreForUser
--- computes and store the average score for a student. 
--- An average score can be a decimal
+-- creates a stored procedure ComputeAverageScoreForUser that
+-- computes and store the average score for a student.
 
-DELIMITER $$;
+DELIMITER $$ ;
 CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
 BEGIN
     DECLARE average_score INT;
