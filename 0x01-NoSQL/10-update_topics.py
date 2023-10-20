@@ -15,6 +15,7 @@ Example:
     update_topics(my_mongo_collection, "Example School", ["Math", "Science", "History"])
 """
 def update_topics(mongo_collection, name, topics):
+     """Changes all topics of a school document"""
     return mongo_collection.update_many(
         {"name": name},
         {"$set": {"topics": topics}}
