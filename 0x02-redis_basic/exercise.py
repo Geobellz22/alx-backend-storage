@@ -2,7 +2,7 @@
 """Module for using the redis Nosql"""
 import redis
 import uuid
-from typing import Union
+from typing import Callable, Union
 
 
 class Cache:
