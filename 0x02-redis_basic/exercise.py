@@ -5,7 +5,6 @@ import uuid
 from functools import wraps
 from typing import Callable, Union
 
-
 class Cache:
     def __init__(self):
         """initialize redis"""
@@ -21,6 +20,7 @@ class Cache:
             return method(self, *args, **kwargs)
         return wrapper
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """store  bytes int and float"""
         key = str(uuid.uuid4())
