@@ -5,13 +5,13 @@ import uuid
 from functools import wraps
 from typing import Callable, Union
 
+
 class Cache:
     def __init__(self):
         """initialize redis"""
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    @staticmethod
     def count_calls(method: Callable) -> Callable:
         @wraps(method)
         def wrapper(self, *args, **kwargs):
@@ -22,7 +22,7 @@ class Cache:
 
     @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
-        """store  bytes int and float"""
+        """store bytes, int, and float"""
         key = str(uuid.uuid4())
         self._redis.set(key, data)
         return key
