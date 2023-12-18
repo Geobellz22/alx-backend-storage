@@ -12,7 +12,8 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def count_calls(method: Callable) -> Callable:
+    @classmethod
+    def count_calls(cls, method: Callable) -> Callable:
         @wraps(method)
         def wrapper(self, *args, **kwargs):
             key = f"{method.__qualname__}_calls"
